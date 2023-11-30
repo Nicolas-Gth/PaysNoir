@@ -61,7 +61,7 @@ a {
 }
 
 html, body { /* empêche de scroll en dehors de la page */
-	overflow-x: hidden;
+	overflow-x: clip;
 }
 
 body {
