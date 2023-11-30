@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/style.css">
+
+	<!--Police d'écriture google font-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap" rel="stylesheet">
+
+	<!--Icônes-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+	<title>Pays Noir - Accueil</title>
+</head>
+
+<body>
+	<nav>
+		<a href="index.html" class="menu-logo">
+			<img src="./img/menu/menu-logo.svg" alt="menu logo">
+			<span>Pays Noir</span>
+		</a>
+		<input type="checkbox" id="menu-hamburger-checkbox">
+		<ul>
+			<li><a href="index.html">Accueil</a></li>
+			<li>
+				<input type="checkbox" id="menu-hamburger-submenu1-checkbox" class="menu-hamburger-submenu-checkbox">
+				<label for="menu-hamburger-submenu1-checkbox">
+					<a href="bars.html">Bars et restauration</a>
+					<i class="fa fa-caret-down" aria-hidden="true"></i>
+				</label>
+				<ul class="submenu">
+					<li><a href="bars.html#Bars">Bars</a></li>
+					<li><a href="#">Brasseries</a></li>
+				</ul>
+			</li>
+			<li>
+				<input type="checkbox" id="menu-hamburger-submenu2-checkbox" class="menu-hamburger-submenu-checkbox">
+				<label for="menu-hamburger-submenu2-checkbox">
+					<a href="#">Culture</a>
+					<i class="fa fa-caret-down" aria-hidden="true"></i>
+				</label>
+				<ul class="submenu">
+					<li><a href="#">Spectacles</a></li>
+					<li><a href="#">Musées</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Nature</a></li>
+			<li><a href="#">Shopping</a></li>
+		</ul>
+		<label class="menu-hamburger" for="menu-hamburger-checkbox">
+			<div class="menu-hamburger-middle"></div>
+		</label>
+	</nav>
+	<header>
+		<div class="slideshow-container">
+			<div class="slideshow-img-container">
+				<div class="slideshow-wrapper">
+					<img src="./img/slideshow/bps22.jpg" alt="BPS22">
+					<img src="./img/slideshow/carolopolitan.jpg" alt="Carolopolitan">
+					<img src="./img/slideshow/lancre.jpg" alt="L'Ancre">
+					<img src="./img/slideshow/boisducazier.jpg" alt="Le Bois du Cazier">
+					<img src="./img/slideshow/bps22.jpg" alt="BPS22">
+				</div>
+			</div>
+			<label class="label1">
+				<span class="title">BPS 22</span>
+				<span class="description">Un musée atypique, où sont programmées<br>des expositions temporaires
+					d'art
+					moderne<br>et contemporain.</span>
+			</label>
+			<label class="label2">
+				<span class="title">Le Carolopolitan</span>
+				<span class="description">Une envie de cocktails ?</span>
+			</label>
+			<label class="label3">
+				<span class="title">L'Ancre</span>
+				<span class="description">Plus de 50 ans d'histoire, de créations<br> et de rencontres.</span>
+			</label>
+			<label class="label4">
+				<span class="title">Le Bois du Cazier</span>
+				<span class="description">Lieu culturel incontournable sur fond de<br>patrimoine industriel niché au
+					creux<br>d'un écrin de verdure.</span>
+			</label>
+		</div>
+	</header>
+	<main>
+		<div class="content-container">
+			<h1>Bienvenue sur Pays Noir</h1>
+			<p>
+				L'annuaire des activités à Charleroi
+			</p>
+			<h1>Notre sélection</h1>
+			<div class="cards-wrapper">
+				<div class="card">
+					<div class="card-img">
+						<span class="card-category">Nature</span>
+						<img src="./img/slideshow/boisducazier.jpg" alt="Le Bois du Cazier">
+					</div>
+					<div class="card-content">
+						<p class="title">Le Bois du Cazier</p>
+						<p class="description">
+							Lieu culturel incontournable sur fond de patrimoine industriel niché au creux d'un écrin de
+							verdure.
+						</p>
+						<button>En savoir plus</button>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-img">
+						<span class="card-category">Spectacles et événements</span>
+						<img src="./img/cards/rockerill.jpg" alt="Le Rockerill">
+					</div>
+					<div class="card-content">
+						<p class="title">Le Rockerill</p>
+						<p class="description">
+							Le Rockerill est installé sur le site des forges de la Providence reconverties en salle de
+							concerts et expositions alternatives..
+						</p>
+						<button>En savoir plus</button>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-img">
+						<span class="card-category">Restauration</span>
+						<img src="./img/cards/lamanufacture.jpg" alt="La Manufacture Urbaine">
+					</div>
+					<div class="card-content">
+						<p class="title">L'Atelier de La Manufacture Urbaine</p>
+						<p class="description">
+							Véritable producteur en plein cœur de Charleroi, La Manufacture Urbaine brasse de la bière
+							en circuit court en valorisant le savoir-faire des artisans locaux.
+						</p>
+						<button>En savoir plus</button>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-img">
+						<span class="card-category">Restauration</span>
+						<img src="./img/cards/badfestival.png" alt="La Manufacture Urbaine">
+					</div>
+					<div class="card-content">
+						<p class="title">BAD Festival</p>
+						<p class="description">
+							Le BAD Festival est un lieu dédié à la gastronomie, la fête, l'art et la culture à Charleroi
+							! Un lieu unique en son genre.
+						</p>
+						<button>En savoir plus</button>
+					</div>
+				</div>
+			</div>
+			<div id="slider">
+				<input type="radio" name="slider" id="slide1" checked>
+				<input type="radio" name="slider" id="slide2">
+				<input type="radio" name="slider" id="slide3">
+				<input type="radio" name="slider" id="slide4">
+				<div id="slides">
+					<div id="overflow">
+						<div class="inner">
+							<div class="slide slide_1">
+								<div class="card">
+									<div class="card-img">
+										<span class="card-category">Nature</span>
+										<img src="./img/slideshow/boisducazier.jpg" alt="Le Bois du Cazier">
+									</div>
+									<div class="card-content">
+										<p class="title">Le Bois du Cazier</p>
+										<p class="description">
+											Lieu culturel incontournable sur fond de patrimoine industriel niché au
+											creux d'un écrin de
+											verdure.
+										</p>
+										<button>En savoir plus</button>
+									</div>
+								</div>
+							</div>
+							<div class="slide slide_2">
+								<div class="card">
+									<div class="card-img">
+										<span class="card-category">Spectacles et événements</span>
+										<img src="./img/cards/rockerill.jpg" alt="Le Rockerill">
+									</div>
+									<div class="card-content">
+										<p class="title">Le Rockerill</p>
+										<p class="description">
+											Le Rockerill est installé sur le site des forges de la Providence
+											reconverties en salle de
+											concerts et expositions alternatives..
+										</p>
+										<button>En savoir plus</button>
+									</div>
+								</div>
+							</div>
+							<div class="slide slide_3">
+								<div class="card">
+									<div class="card-img">
+										<span class="card-category">Restauration</span>
+										<img src="./img/cards/lamanufacture.jpg" alt="La Manufacture Urbaine">
+									</div>
+									<div class="card-content">
+										<p class="title">L'Atelier de La Manufacture Urbaine</p>
+										<p class="description">
+											Véritable producteur en plein cœur de Charleroi, La Manufacture Urbaine
+											brasse de la bière
+											en circuit court en valorisant le savoir-faire des artisans locaux.
+										</p>
+										<button>En savoir plus</button>
+									</div>
+								</div>
+							</div>
+							<div class="slide slide_4">
+								<div class="card">
+									<div class="card-img">
+										<span class="card-category">Restauration</span>
+										<img src="./img/cards/badfestival.png" alt="La Manufacture Urbaine">
+									</div>
+									<div class="card-content">
+										<p class="title">BAD Festival</p>
+										<p class="description">
+											Le BAD Festival est un lieu dédié à la gastronomie, la fête, l'art et la
+											culture à Charleroi
+											! Un lieu unique en son genre.
+										</p>
+										<button>En savoir plus</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="controls">
+					<label for="slide1"></label>
+					<label for="slide2"></label>
+					<label for="slide3"></label>
+					<label for="slide4"></label>
+				</div>
+				<div id="bullets">
+					<label for="slide1"></label>
+					<label for="slide2"></label>
+					<label for="slide3"></label>
+					<label for="slide4"></label>
+				</div>
+			</div>
+			<h2>Simple et efficace</h2>
+			<p>
+				Irish Time<br>Livre ou Verre<br>La Cuve À Bière<br>Le Carolopolitan<br>Chez Ta Mère
+			</p>
+			<h2>Pour une journée ensoleillée</h2>
+		</div>
+	</main>
+	<footer>
+		<ul>
+			<li><a href="mailto:gouthierenicolas12@gmail.com" target="_blank"><i class=" fa fa-envelope fa-xs"
+						aria-hidden="true"></i>
+					Mail</a>
+			</li>
+			<li><a href="https://www.linkedin.com/in/nicolas-gouthiere-6b364b250/?originalSubdomain=be"
+					target="_blank"><i class=" fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a>
+			</li>
+			<li><a href="https://github.com/Nicolas-Gth" target="_blank"><i class=" fa fa-github-square"
+						aria-hidden="true"></i>
+					Github</a></li>
+		</ul>
+		<small>
+			Ce site a été conçu pour le cours de Technologies Internet en Haute École Louvain en Hainaut option
+			informatique de développement.<br>
+			Copyright &copy 2023 Nicolas Gouthiere | Photos par David Gouthiere - Tous droits réservés.
+		</small>
+	</footer>
+</body>
+
+</html>
