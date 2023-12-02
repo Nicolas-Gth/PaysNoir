@@ -447,19 +447,13 @@ h2 {
 	position: relative;
 	z-index: 1;
 }
-#overflow {
-	width: 100%;
-	overflow: hidden;
-}
 
 /* translate les cartes */
-#slide1:checked ~ .cards-wrapper { transform: translateX(0);}
-#slide2:checked ~ .cards-wrapper { transform: translateX(-380px);}
-#slide3:checked ~ .cards-wrapper { transform: translateX(-760px); }
-#slide4:checked ~ .cards-wrapper { transform: translateX(-1140px); }
-.cards-wrapper {
-	transition: all .50s ease;
-}
+#slide1:checked ~ .cards-wrapper { transform: translateX(0px); transition: all .50s ease}
+#slide2:checked ~ .cards-wrapper { transform: translateX(-360px); transition: all .50s ease;}
+#slide3:checked ~ .cards-wrapper { transform: translateX(-720px); transition: all .50s ease;}
+#slide4:checked ~ .cards-wrapper { transform: translateX(-1080px); transition: all .50s ease;}
+
 .slides .slide {
 	width: 25%;
 	float:left;
@@ -517,9 +511,14 @@ h2 {
 }
 
 /* enlève boutons si écran suffisament large pour afficher toutes les cartes */
-@media screen and (min-width: 1420px) {
+@media screen and (min-width: 1440px) {
 	.controls { display: none;}
 	.bullets label{ display: none;}
+
+	.slider {
+		width: 1440px;
+		overflow: hidden;
+	}
 }
 
 /* Horaires */
