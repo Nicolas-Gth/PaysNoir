@@ -329,22 +329,21 @@ p {
 }
 
 h1 {
-	font-size: clamp(30px,10vw,40px);
+	font-size: clamp(30px,10vw,50px);
 	font-weight: normal;
 }
 
 h2 {
-	margin-top: 10px ;
-	margin-bottom: 10px;
-	font-size: 50px;
+	font-size: clamp(26px,10vw,30px);
 }
 
 /* Textes */
 
 .text-container {
-	max-width: 800px;
-	margin-left: 12px;
-	margin-right: 12px;
+	width: clamp(10px, 100%, 800px);
+	padding-left: 12px;
+	padding-right: 12px;
+	box-sizing:border-box; /* indique au navigateur qu'il doit tenir compte des bordures */
 	text-align: left;
 }
 
@@ -358,6 +357,10 @@ h2 {
 
 .title-spacer {
 	height: 20px;
+}
+
+.sub-title-spacer {
+	height: 8px;
 }
 
 .content-container {
