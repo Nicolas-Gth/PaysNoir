@@ -329,7 +329,7 @@ p {
 }
 
 h1 {
-	font-size: 40px;
+	font-size: clamp(30px,10vw,40px);
 	font-weight: normal;
 }
 
@@ -343,8 +343,8 @@ h2 {
 
 .text-container {
 	max-width: 800px;
-	margin-left: 15px;
-	margin-right: 15px;
+	margin-left: 12px;
+	margin-right: 12px;
 	text-align: left;
 }
 
