@@ -276,7 +276,7 @@ nav input[type="checkbox"] {
 
 header img {
 	width: 100vw;
-	height:max-content;
+	/* height:max-content; */
 }
 
 @keyframes slide{
