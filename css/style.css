@@ -329,7 +329,7 @@ p {
 }
 
 h1 {
-	font-size: clamp(20px,11vw,55px);
+	font-size: clamp(20px,10.7vw,55px);
 	font-weight: normal;
 	margin-bottom: 40px;
 	position: relative;
