@@ -206,6 +206,10 @@ nav ul li:hover > label i{
 
 /* Menu hamburger */
 .menu-overlay {
+	/*Empèche l'utilisateur de cliquer sur ce qu'il se trouve en dessous*/
+	pointer-events: none;
+	user-select: none;
+
 	z-index: 10;
 	display: none;
 	position: fixed; /* Elle sera fixée par rapport à la fenêtre du navigateur */
