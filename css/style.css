@@ -107,6 +107,7 @@ main {
 
 /* Barre */
 nav {
+	user-select: none;
 	z-index: 1000;
 	position: sticky;
 	width: 100%;
