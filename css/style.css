@@ -142,7 +142,7 @@ nav ul a {
 .menu-icon {
 	width: 0.9em;
 	display: inline-block;
-	padding-right: 20px;
+	padding-right: 16px;
 }
 
 nav ul i {
@@ -150,6 +150,7 @@ nav ul i {
 	transition: transform 0.3s ease-in-out;
 	transform: translate(0px, -3px);
 	transform-origin: center 36%;
+	user-select: none;
 }
 
 nav ul label {
@@ -715,6 +716,12 @@ footer ul li {
 		font-size: 28px;
 		border-bottom: 2px solid transparent;
 	}
+
+	nav ul i {
+		padding:0px 10px 0px 10px;
+		transform: translate(0px, -2px);
+		transform-origin: center 36%;
+	}
 }
 
 /* Smartphone ou Tablette */
@@ -751,7 +758,7 @@ footer ul li {
 		flex-direction: column;
 		height: calc(100vh - 74px - var(--hamburger-top-space));
 		justify-content: flex-start;
-		gap: 40px;
+		gap: 4vh;
 		transition: all .50s ease;
 		padding: var(--hamburger-top-space) 8vw 0px 8vw;
 		margin: 0;
@@ -759,6 +766,7 @@ footer ul li {
 	}
 
 	nav ul a {
+		font-size: clamp(14px, 6vw, 30px);
 		display: block;
 		margin: 0px 8px 0px 0px;
 		transition: all .50s ease;
@@ -766,6 +774,9 @@ footer ul li {
 
 	nav ul i {
 		padding:0px 10px 0px 10px;
+		transform: translate(0px, 0px);
+		align-items: center;
+		transform-origin: center 40%;
 	}
 	
 	.menu-hamburger {
@@ -785,7 +796,7 @@ footer ul li {
     }
 
 	.submenu li a {
-		font-size: 1.6em;
+		font-size: clamp(12px, 4.4vw, 24px);;
 		padding: 16px 0px 0px 48px;
 	}
 
