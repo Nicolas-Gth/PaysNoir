@@ -107,23 +107,24 @@ main {
 
 /* Barre */
 nav {
+	z-index: 1000;
 	position: sticky;
 	width: 100%;
 	height: 70px;
 	top: 0;
 	right: 0;
-	z-index: 1000;
 	display: flex;
 	align-items:center;
 	padding-bottom: 8px;
 	justify-content: space-between;
-	background: var(--navbar-background-color);
+	background-color: var(--navbar-background-color);
 	transition: all .50s ease;
 	box-shadow: 0px 5px 25px rgb(10, 10, 10);
 }
 
 /* Élements barre */
 nav ul {
+	z-index: 1000;
 	display: flex;
 	align-items: baseline;
 	margin-right: 20px;
@@ -138,10 +139,17 @@ nav ul a {
 	border-bottom: 2px solid transparent;
 }
 
+.menu-icon {
+	width: 0.9em;
+	display: inline-block;
+	padding-right: 20px;
+}
+
 nav ul i {
 	color: var(--navbar-accent-color);
 	transition: transform 0.3s ease-in-out;
 	transform: translate(0px, -3px);
+	transform-origin: center 36%;
 }
 
 nav ul label {
@@ -169,12 +177,12 @@ nav ul a:hover {
 }
 
 /* Affiche le sous menu si on clique sur le caret*/
-.menu-hamburger-submenu-checkbox[type=checkbox]:checked ~ .submenu {
+.menu-hamburger-submenu-checkbox:checked ~ .submenu {
 	display: flex;
 	flex-direction: column;
 }
 
-.menu-hamburger-submenu-checkbox[type=checkbox]:checked ~ label i {
+.menu-hamburger-submenu-checkbox:checked ~ label i {
 	transform: rotate(180deg);
 	transition: transform 0.3s ease-in-out;
 }
@@ -192,7 +200,31 @@ nav ul li:hover > label i{
 }
 
 /* Menu hamburger */
-#menu-hamburger-checkbox[type=checkbox]:checked ~ ul { /*slide le menu*/
+.menu-overlay {
+	z-index: 10;
+	display: none;
+	position: fixed; /* Elle sera fixée par rapport à la fenêtre du navigateur */
+	width: 100%;
+	height: 100%;
+	top: 74px;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (min-width: 950px) and (hover:hover) {
+	.menu-overlay {
+		height: 0%; /* cache l'assombrissement */
+	}
+	.menu-icon {
+		display: none;
+	}
+}
+
+
+#menu-hamburger-checkbox:checked ~ .menu-overlay { /*assombrissement*/
+	display: block;
+}
+#menu-hamburger-checkbox:checked ~ ul { /*slide le menu*/
 	right: 0%;
 }
 
@@ -200,6 +232,7 @@ nav ul li:hover > label i{
 	--x-width: calc(var(--hamburger-height)*1.41421356237);
 	padding: var(--bar-margin);
 	display: none;
+	cursor: pointer;
 	gap: var(--bar-gap)
 }
 
@@ -458,6 +491,7 @@ h3 {
 }
 
 .card button {
+	user-select: none;
 	cursor: pointer;
 	margin-top: auto; /* ajoute de la marge au dessus du bouton pour qu'il soit poussé en bas de la flexbox */
 	padding: 7px 20px;
@@ -524,6 +558,7 @@ h3 {
 #slide2:checked ~ .controls label:nth-child(3),
 #slide3:checked ~ .controls label:nth-child(4),
 #slide4:checked ~ .controls label:nth-child(1) {
+	user-select: none;
 	background: url(../img/arrow.png) no-repeat;
 	background-size: 100%;
 	transform: rotate(180deg) translate(20%, 480%);
@@ -534,6 +569,7 @@ h3 {
 #slide2:checked ~ .controls label:nth-last-child(4),
 #slide3:checked ~ .controls label:nth-last-child(3),
 #slide4:checked ~ .controls label:nth-last-child(2){
+	user-select: none;
 	background: url(../img/arrow.png) no-repeat;
 	background-size: 100%;
 	float:left;
@@ -544,6 +580,7 @@ h3 {
 	text-align: center;
 }
 .bullets label {
+	user-select: none;
 	display: inline-block;
 	width: 8px;
 	height: 8px;
@@ -654,7 +691,6 @@ footer ul li {
 	/* ======[Menu]====== */
 
 	/* Logo */
-
 	.menu-logo span {
 		font-size:40px;
 		transition: all .50s ease;
@@ -668,22 +704,16 @@ footer ul li {
 	}
 
 	/* Barre de navigation */
-	nav {
-		transition: all .50s ease;
-	}
+	nav { transition: all .50s ease;}
 
 	/* Élements barre */
-	nav ul {
-		margin-right: 20px;
-	}
+	nav ul { margin-right: 20px; }
 
 	nav ul a {
-		margin: 25px 3px 0px 22px;
-		/* margin: 25px 14px 0px 14px; */
+		margin: 25px 5px 0px 22px;
 		font-size: 28px;
 		border-bottom: 2px solid transparent;
 	}
-
 }
 
 /* Smartphone ou Tablette */
@@ -711,17 +741,20 @@ footer ul li {
 		
 	}
 	nav ul {
+		--hamburger-top-space: 40px;
 		position: absolute;
 		top: 100%;
 		right: -100%;
 		background-color: var(--navbar-background-color);
 		display: flex;
 		flex-direction: column;
+		height: calc(100vh - 74px - var(--hamburger-top-space));
 		justify-content: flex-start;
-		gap: 20px;
+		gap: 40px;
 		transition: all .50s ease;
-		padding: 10px 20px 10px 20px;
+		padding: var(--hamburger-top-space) 8vw 0px 8vw;
 		margin: 0;
+		box-shadow: -10px 20px 20px rgba(0, 0, 0, 0.793);
 	}
 
 	nav ul a {
@@ -729,30 +762,43 @@ footer ul li {
 		margin: 0px 8px 0px 0px;
 		transition: all .50s ease;
 	}
-	
-	nav a:hover {
-		transform: translateX(10px);
-	}
 
+	nav ul i {
+		padding:0px 10px 0px 10px;
+	}
+	
 	.menu-hamburger {
 		display: flex;
 		flex-direction: column;
 	}
 
-	/* .submenu {
-		display: flex;
-		flex-flow: column wrap;
-		z-index: 1000;
-	}
-
-	.submenu li{
-		flex: 1 1 auto;
-		text-align: left;
-	}
+    .submenu {
+		gap:0;
+		padding: 0;
+		position: static;
+		background-color: transparent;
+		box-shadow: none;
+        left: 0;
+		height: auto;
+        width: 100%; /* Cela garantit que le sous-menu s'adapte à la largeur de son parent */
+    }
 
 	.submenu li a {
-		padding: 10px;
-	} */
+		font-size: 1.6em;
+		padding: 16px 0px 0px 48px;
+	}
+
+	/* Affiche le sous menu si on clique sur le caret*/
+	.menu-hamburger-submenu-checkbox:checked ~ .submenu {
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* Affiche le sous menu si on le survole*/
+	nav > ul li:hover .submenu{
+		display: flex;
+		flex-direction: column;
+	}
 
 	/* Contenu */
 	.content {

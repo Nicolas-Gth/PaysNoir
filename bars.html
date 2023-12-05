@@ -28,14 +28,22 @@
 		<ul>
 			<li><a href="index.html">Accueil</a></li>
 			<li>
-				<a href="bars.html">Bars et restauration▾</a>
+				<input type="checkbox" id="menu-hamburger-submenu1-checkbox" class="menu-hamburger-submenu-checkbox">
+				<label for="menu-hamburger-submenu1-checkbox">
+					<a href="bars.html">Bars et restauration</a>
+					<i class="fa fa-caret-down" aria-hidden="true"></i>
+				</label>
 				<ul class="submenu">
-					<li><a href="#">Bars</a></li>
+					<li><a href="bars.html#Bars">Bars</a></li>
 					<li><a href="#">Brasseries</a></li>
 				</ul>
 			</li>
 			<li>
-				<a href="#">Culture▾</a>
+				<input type="checkbox" id="menu-hamburger-submenu2-checkbox" class="menu-hamburger-submenu-checkbox">
+				<label for="menu-hamburger-submenu2-checkbox">
+					<a href="#">Culture</a>
+					<i class="fa fa-caret-down" aria-hidden="true"></i>
+				</label>
 				<ul class="submenu">
 					<li><a href="#">Spectacles</a></li>
 					<li><a href="#">Musées</a></li>
@@ -111,11 +119,15 @@
 						aria-hidden="true"></i>
 					Github</a></li>
 		</ul>
-		<small>
-			Ce site a été conçu pour le cours de Technologies Internet en Haute École Louvain en Hainaut option
-			informatique de développement<br>
-			Copyright &copy 2023 Nicolas Gouthiere | Photos par David Gouthiere - Tous droits réservés.
-		</small>
+		<div class="footer-text">
+			<small class="footer-description">
+				Ce site a été conçu pour le cours de Technologies Internet en Haute École Louvain en Hainaut option
+				informatique de développement.
+			</small>
+			<small class="footer-copyright">
+				Copyright &copy 2023 Nicolas Gouthiere | Photos par David Gouthiere - Tous droits réservés.
+			</small>
+		</div>
 	</footer>
 </body>
 
