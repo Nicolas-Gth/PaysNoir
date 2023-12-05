@@ -35,6 +35,7 @@
 	--slideshow-speed: 40s
 }
 
+
 p {
 	font-family: var(--text-font);
 }
@@ -52,6 +53,7 @@ a {
 	font-family: 'engebrechtreregular';
 	text-decoration: none;
 	list-style: none;
+	-webkit-tap-highlight-color: transparent;
 }
 
 *::after,
