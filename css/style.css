@@ -181,12 +181,20 @@ nav ul label {
 }
 
 /* Affiche le sous menu si on clique sur le caret*/
-#menu-hamburger-submenu1-checkbox:checked ~ .submenu {
+.menu-hamburger-submenu-checkbox:checked ~ .submenu {
 	max-height: 500px;
 }
+.menu-hamburger-submenu-checkbox:not(:checked) ~ .submenu {
+	max-height: 0px;
+}
 
-#menu-hamburger-submenu1-checkbox:checked ~ label i {
+.menu-hamburger-submenu-checkbox:checked ~ label i {
 	transform: rotate(180deg);
+	transition: transform 0.3s ease-in-out;
+}
+
+.menu-hamburger-submenu-checkbox:not(:checked) ~ label i {
+	transform: none;
 	transition: transform 0.3s ease-in-out;
 }
 
@@ -288,9 +296,9 @@ nav ul li:hover > label i{
 	opacity: 0;
 }
 
-/* nav input[type="checkbox"] {
+nav input[type="checkbox"] {
 	display: none;
-} */
+}
 
 /* =====[Slideshow]====== */
 .slideshow-container {
