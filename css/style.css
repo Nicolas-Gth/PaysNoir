@@ -1,4 +1,6 @@
 /* Police */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap');
+
 @font-face {
     font-family: 'engebrechtreregular';
     src: url('../font/engebrechtre_rg-webfont.woff2') format('woff2'),
@@ -7,8 +9,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap');
 
 /* Variables */
 :root{
@@ -163,11 +163,6 @@ nav ul label {
 	font-size:larger;
 }
 
-nav ul a:hover {
-	border-bottom: 2px solid white;
-	transform: translateY(-6px);
-}
-
 /* Sous menu */
 .submenu{
 	display: none;
@@ -206,10 +201,7 @@ nav ul li:hover > label i{
 
 /* Menu hamburger */
 .menu-overlay {
-	/*Empèche l'utilisateur de cliquer sur ce qu'il se trouve en dessous*/
-	pointer-events: none;
-	user-select: none;
-
+	user-select: none;/*Empèche l'utilisateur de cliquer sur ce qu'il se trouve en dessous*/
 	z-index: 10;
 	display: none;
 	position: fixed; /* Elle sera fixée par rapport à la fenêtre du navigateur */
@@ -226,6 +218,10 @@ nav ul li:hover > label i{
 	}
 	.menu-icon {
 		display: none;
+	}
+	nav ul a:hover {
+		border-bottom: 2px solid white;
+		transform: translateY(-6px);
 	}
 }
 
