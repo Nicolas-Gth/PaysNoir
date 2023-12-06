@@ -165,7 +165,11 @@ nav ul label {
 
 /* Sous menu */
 .submenu{
-	display: none;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.5s ease;
+	display: flex;
+	flex-direction: column;
 	background-color: var(--navbar-background-color);
 	color: var(--navbar-accent-color);
 	position: absolute;
@@ -177,14 +181,8 @@ nav ul label {
 }
 
 /* Affiche le sous menu si on clique sur le caret*/
-#menu-hamburger-submenu1-checkbox:checked ~ .submenu1 {
-	display: flex;
-	flex-direction: column;
-}
-
-#menu-hamburger-submenu2-checkbox:checked ~ .submenu2 {
-	display: flex;
-	flex-direction: column;
+#menu-hamburger-submenu1-checkbox:checked ~ .submenu {
+	max-height: 500px;
 }
 
 #menu-hamburger-submenu1-checkbox:checked ~ label i {
@@ -192,16 +190,10 @@ nav ul label {
 	transition: transform 0.3s ease-in-out;
 }
 
-#menu-hamburger-submenu2-checkbox:checked ~ label i {
-	transform: rotate(180deg);
-	transition: transform 0.3s ease-in-out;
-}
-
 
 /* Affiche le sous menu si on le survole*/
 nav > ul li:hover .submenu{
-	display: flex;
-	flex-direction: column;
+	max-height: 500px;
 }
 
 nav ul li:hover > label i{
@@ -296,9 +288,9 @@ nav ul li:hover > label i{
 	opacity: 0;
 }
 
-nav input[type="checkbox"] {
+/* nav input[type="checkbox"] {
 	display: none;
-}
+} */
 
 /* =====[Slideshow]====== */
 .slideshow-container {
@@ -811,12 +803,6 @@ footer ul li {
 	.submenu li a {
 		font-size: clamp(12px, 4.4vw, 24px);;
 		padding: 16px 0px 0px 48px;
-	}
-
-	/* Affiche le sous menu si on le survole*/
-	nav > ul li:hover .submenu{
-		display: flex;
-		flex-direction: column;
 	}
 
 	/* Contenu */
