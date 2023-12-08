@@ -134,6 +134,7 @@ nav ul {
 }
 
 nav ul a {
+	position: relative;
 	display: block;
 	color: var(--navbar-accent-color);
 	margin: 25px 6px 0px 34px;
@@ -149,11 +150,21 @@ nav ul a {
 }
 
 nav ul i {
+	position: relative;
 	color: var(--navbar-accent-color);
 	transition: transform 0.3s ease-in-out;
 	transform: translate(0px, -3px);
 	transform-origin: center 36%;
 	user-select: none;
+}
+
+nav ul i:after{ /* Agrandit la zone cliquable */
+	padding: 36px 30px;
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -60%);
 }
 
 nav ul label {
@@ -173,19 +184,22 @@ nav ul label {
 	background-color: var(--navbar-background-color);
 	color: var(--navbar-accent-color);
 	position: absolute;
+	transform: translate(15px);
 	width:200px;
-	padding-bottom: 14px;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
+	margin-bottom: 14px;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
 	box-shadow: 0px 5px 25px rgb(10, 10, 10);
+}
+
+.submenu li a{
+	font-size:26px;
 }
 
 /* Affiche le sous menu si on clique sur le caret*/
 .menu-hamburger-submenu-checkbox:checked ~ .submenu {
 	max-height: 500px;
-}
-.menu-hamburger-submenu-checkbox:not(:checked) ~ .submenu {
-	max-height: 0px;
+	transition: max-height 0.5s ease;
 }
 
 .menu-hamburger-submenu-checkbox:checked ~ label i {
@@ -193,20 +207,28 @@ nav ul label {
 	transition: transform 0.3s ease-in-out;
 }
 
-.menu-hamburger-submenu-checkbox:not(:checked) ~ label i {
-	transform: none;
-	transition: transform 0.3s ease-in-out;
+@media screen and (hover:none) {
+	.menu-hamburger-submenu-checkbox:not(:checked) ~ .submenu {
+		max-height: 0px;
+		transition: max-height 0.5s ease;
+	}
+	.menu-hamburger-submenu-checkbox:not(:checked) ~ label i {
+		transform: none;
+		transition: transform 0.3s ease-in-out;
+	}
 }
 
 
 /* Affiche le sous menu si on le survole*/
 nav > ul li:hover .submenu{
 	max-height: 500px;
+	transition: max-height 0.5s ease;
 }
 
 nav ul li:hover > label i{
 	transform: rotate(180deg);
 	transition: transform 0.3s ease-in-out;
+	transition: max-height 0.5s ease;
 }
 
 /* Menu hamburger */
@@ -232,6 +254,15 @@ nav ul li:hover > label i{
 	nav ul a:hover {
 		border-bottom: 2px solid white;
 		transform: translateY(-6px);
+	}
+	.submenu a {
+		margin: 14px 0px 14px 20px;
+	}
+	#submenu1 {
+		width:260px;
+	}
+	#submenu2 {
+		width:134px;
 	}
 }
 
@@ -324,7 +355,6 @@ nav input[type="checkbox"] {
 
 header img {
 	width: 100vw;
-	/* height:max-content; */
 }
 
 @keyframes slide{
@@ -526,7 +556,6 @@ h3 {
 }
 
 /* Slider */
-
 .slider {
 	max-width: 100%;
 	text-align: center;
@@ -734,6 +763,21 @@ footer ul li {
 		padding:0px 10px 0px 10px;
 		transform: translate(0px, -2px);
 		transform-origin: center 36%;
+	}
+
+	.submenu {
+		transform: translate(2px);
+	}
+
+	.submenu li a{
+		font-size:22px;
+	}
+
+	#submenu1 {
+		width:253px;
+	}
+	#submenu2 {
+		width:125px;
 	}
 }
 
