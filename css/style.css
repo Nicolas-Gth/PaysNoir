@@ -404,6 +404,13 @@ header img {
 p {
 	font-size: 18px;
 	line-height: 24px;
+	text-align: justify;
+
+	/* permet les césures */
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
 }
 
 h1 {
@@ -437,41 +444,83 @@ h3 {
 	margin-bottom: 6px;
 }
 
-/* Textes */
-
-.text-container {
-	width: clamp(10px, 100%, 800px);
-	padding-left: 12px;
-	padding-right: 12px;
-	margin-top: 40px;
-	box-sizing:border-box; /* indique au navigateur qu'il doit tenir compte des bordures */
-	text-align: justify;
-
-	/* permet les césures */
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	-ms-hyphens: auto;
-	hyphens: auto;
+.title-img {
+	width: clamp( 300px, 40vw, 600px);
 }
 
-.text-container h1 {
-	text-align: center;
-}
-
+/* Layouts */
+/* Layout simple colonne */
 .content-container {
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 40px;
 	align-items: center;
 }
+.text-container {
+	width: clamp(10px, 100%, 800px);
+	padding-left: 12px;
+	padding-right: 12px;
+	margin-top: 40px;
+	box-sizing:border-box; /* indique au navigateur qu'il doit tenir compte des bordures */
+}
+.text-container h1 {
+	text-align: center;
+}
 
-.content img {
-	width:fit-content;
+/* Layout double colonnes */
+.two-columns-container {
+	display: flex;
+	flex-direction: row;
+	margin-top: 40px;
+	justify-content: center;
+}
+.two-columns-text-container {
+	width: clamp(10px, 100%, 360px);
+	padding-left: 12px;
+	padding-right: 12px;
+	box-sizing:border-box; /* indique au navigateur qu'il doit tenir compte des bordures */
+}
+.two-columns-container img {
+	width:clamp(10px, 100%, 600px);
 	height:max-content;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+/* Infos */
+.horaire {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.two-columns-container li {
+	font-family: var(--text-font);
+	min-width:220px;
+	margin-bottom: 4px;
+	display: flex;
+    justify-content: space-between;
+}
+.horaire li {
+    align-items: center;
+	text-align: left;
+}
+.horaire li span {
+	min-width:120px; 
+	font-family: var(--text-font); 
+    flex-basis: 50%; /* à ajuster selon le besoin */
+    text-align: left;
+    margin-right: 10px;
+}
+.money-value {
+	font-family: inherit;
+	color: var(--text-color);
+}
+.money-total {
+	font-family: inherit;
+	color:rgb(96, 96, 96);
 }
 
 /* Cartes */
-
 .cards-wrapper {
 	display: flex;
 	gap: 20px;
@@ -649,45 +698,7 @@ h3 {
 	}
 }
 
-/* Horaires */
-.content .horaire {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.content li {
-	font-family: var(--text-font);
-	min-width:220px;
-	margin-bottom: 4px;
-	display: flex;
-    justify-content: space-between;
-}
-
-.content .horaire li {
-    align-items: center;
-	text-align: left;
-}
-
-.content .horaire li span {
-	min-width:120px; 
-	font-family: var(--text-font); 
-    flex-basis: 50%; /* à ajuster selon le besoin */
-    text-align: left;
-    margin-right: 10px;
-}
-
-.money-value {
-	font-family: inherit;
-	color: var(--text-color);
-}
-.money-total {
-	font-family: inherit;
-	color:rgb(96, 96, 96);
-}
-
 /* =======[Footer]======= */
-
 footer {
 	font-family: var(--text-font);
 	font-size: clamp(10px,4vw,16px);
@@ -696,40 +707,32 @@ footer {
 	background-color: var(--navbar-background-color);
 	width: 100%;
 }
-
-
 .footer-text {
 	border-top: 2px solid rgb(50, 50, 50);
 	width: calc(100% - 10vw); /*largeur bordure */
 	margin: 0 auto;
-}
-  
+} 
 .footer-description {
 	font-family: var(--text-font);
 	padding: 10px;
 	display: block;
-}
-  
+} 
 .footer-copyright {
 	font-family: var(--text-font);
 	padding-bottom: 18px;
 	display: block;
 }
-
 footer ul {
 	display: flex;
 	justify-content: center;
 	gap: 30px;
 	padding: 10px 10px 10px 10px;
 }
-
 footer ul li {
 	font-family: var(--text-font);
 }
 
-
 /* =====[Responsive]===== */
-
 /* Petit écran */
 @media only screen and (max-width: 1200px) and (hover:hover){
 	/* ======[Menu]====== */
@@ -858,6 +861,11 @@ footer ul li {
 	}
 
 	/* Contenu */
+	.two-columns-container {
+		flex-direction: column;
+		gap: 20px;
+	}
+
 	.content {
 		display: flex;
 		flex-direction: column;
@@ -869,8 +877,8 @@ footer ul li {
 		height:auto;
 	}
 
-	.content iframe {
-		width:auto;
+	.two-columns-container iframe {
+		width:100vw;
 		height:auto;
 	}
 }
