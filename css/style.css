@@ -227,8 +227,7 @@ nav > ul li:hover .submenu{
 
 nav ul li:hover > label i{
 	transform: rotate(180deg);
-	transition: transform 0.3s ease-in-out;
-	transition: max-height 0.5s ease;
+	transition: transform 0.3s ease-in-out, max-height 0.5s ease;
 }
 
 /* Menu hamburger */
@@ -398,9 +397,7 @@ header img {
 @keyframes ani4{ 75%{opacity: 0;} 85%{opacity: 1;} 95%{opacity: 1;}100%{opacity: 0;} }
 
 /* ======[Content]======= */
-
 /* Typographie */
-
 p {
 	font-size: 18px;
 	line-height: 24px;
@@ -467,11 +464,21 @@ h3 {
 	text-align: center;
 }
 
+/* Container d'un élément complet */
+.element-container  {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 40px;
+}
+
+.element-container h2 {
+	align-self: flex-start;
+}
+
 /* Layout double colonnes */
 .two-columns-container {
-	display: flex;
-	flex-direction: row;
-	margin-top: 40px;
+	display: inline-flex;
 	justify-content: center;
 }
 .two-columns-text-container {
@@ -482,34 +489,50 @@ h3 {
 }
 .two-columns-container img {
 	width:clamp(10px, 100%, 600px);
-	height:max-content;
+	padding-left: 12px;
+	padding-right: 12px;
+	box-sizing:border-box;
+}
+
+/* Infos */
+.info-box {
+	display: inline-flex;
+	margin-top: 0px;
+	font-size: 18px;
+	gap: 20px;
+	/* transistion bouton afficher */
+	transition: max-height 0.5s ease, margin-top 1s ease;
+	max-height: 0px;
+	overflow: hidden;
+}
+
+.info-box iframe {
 	padding-left: 12px;
 	padding-right: 12px;
 }
 
-/* Infos */
 .horaire {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    padding-left: 12px;
+	padding-right: 12px;
 }
-.two-columns-container li {
-	font-family: var(--text-font);
-	min-width:220px;
-	margin-bottom: 4px;
-	display: flex;
-    justify-content: space-between;
-}
-.horaire li {
-    align-items: center;
-	text-align: left;
-}
-.horaire li span {
-	min-width:120px; 
+.horaire td {
 	font-family: var(--text-font); 
     flex-basis: 50%; /* à ajuster selon le besoin */
     text-align: left;
-    margin-right: 10px;
+    margin-right: 20px;
+}
+
+.horaire td:nth-child(1){ /* espace colonnes */
+	padding: 0 24px 0 0;
+}
+
+.infos {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+.infos li {
+	font-family: var(--text-font);
 }
 .money-value {
 	font-family: inherit;
@@ -518,6 +541,38 @@ h3 {
 .money-total {
 	font-family: inherit;
 	color:rgb(96, 96, 96);
+}
+
+/* Bouton voir plus */
+.element-container input[type="checkbox"] {
+	display: none;
+}
+.expand-button {
+	font-family: var(--text-font);
+	font-size: 16px;
+	appearance: none;
+	background-color: var(--navbar-background-color);
+	border: 1px solid rgb(69, 69, 69);
+	padding: 10px 20px 10px 20px;
+	border-radius: 99px;
+	cursor: pointer;
+	margin-top: 1rem;
+	transition: background-color var(--animation-timing);
+}
+.expand-button:hover {
+	background-color: rgb(30, 30, 30);
+	transition: background-color var(--animation-timing);
+}
+.expand-button::before {
+	content: "Afficher les infos ▾";
+}
+#irish-expand-button:checked ~ .expand-button::before {
+	content: "Cacher les infos ▴";
+}
+#irish-expand-button:checked ~ .info-box {
+	margin-top: 40px;
+	max-height: 600px;
+	transition: max-height 0.5s ease, margin-top 0.2s ease;
 }
 
 /* Cartes */
@@ -864,6 +919,14 @@ footer ul li {
 	.two-columns-container {
 		flex-direction: column;
 		gap: 20px;
+	}
+
+	.info-box {
+		flex-direction: column;
+	}
+
+	.info-box iframe {
+		width: auto;
 	}
 
 	.content {
