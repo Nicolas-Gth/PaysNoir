@@ -97,14 +97,22 @@ main {
 	font-size:50px;
 	color: var(--navbar-accent-color);
 	padding-top: 10px;
-	transition: all .50s ease;
+	transition: all 0.5s ease;
+}
+
+/* surbrillance titre */
+.menu-logo:hover span{
+	text-shadow: 0px 0px 10px var(--navbar-accent-color);
+}
+.menu-logo:hover img{
+	filter: drop-shadow(0px 0px 15px var(--accent-color));
 }
 
 .menu-logo img {
 	width: 30px;
 	padding-left: 30px;
 	padding-right: 20px;
-	transition: all .50s ease;
+	transition: all .5s ease;
 }
 
 /* Barre */
@@ -186,7 +194,7 @@ nav ul label {
 	position: absolute;
 	transform: translate(15px);
 	width:200px;
-	margin-bottom: 14px;
+	/* margin-bottom: 14px; */
 	border-bottom-left-radius: 8px;
 	border-bottom-right-radius: 8px;
 	box-shadow: 0px 5px 25px rgb(10, 10, 10);
@@ -251,7 +259,7 @@ nav ul li:hover > label i{
 		display: none;
 	}
 	nav ul a:hover {
-		border-bottom: 2px solid white;
+		border-bottom: 2px solid var(--navbar-accent-color);
 		transform: translateY(-6px);
 	}
 	.submenu a {
@@ -402,6 +410,7 @@ p {
 	font-size: 18px;
 	line-height: 24px;
 	text-align: justify;
+	
 
 	/* permet les césures */
 	-webkit-hyphens: auto;
@@ -411,7 +420,7 @@ p {
 }
 
 h1 {
-	font-size: clamp(20px,10.7vw,55px);
+	font-size: clamp(20px,10.7vw,70px);
 	font-weight: normal;
 	margin-bottom: 40px;
 	position: relative;
@@ -431,7 +440,7 @@ h1::after {
 }
 
 h2 {
-	font-size: clamp(10px,10vw,30px);
+	font-size: clamp(10px,10vw,40px);
 	font-weight: normal;
 	margin-bottom: 6px;
 }
@@ -439,10 +448,6 @@ h2 {
 h3 {
 	font-weight: normal;
 	margin-bottom: 6px;
-}
-
-.title-img {
-	width: clamp( 300px, 40vw, 600px);
 }
 
 /* Layouts */
@@ -454,7 +459,7 @@ h3 {
 	align-items: center;
 }
 .text-container {
-	width: clamp(10px, 100%, 800px);
+	width: clamp(10px, 100%, 700px);
 	padding-left: 12px;
 	padding-right: 12px;
 	margin-top: 40px;
@@ -464,9 +469,30 @@ h3 {
 	text-align: center;
 }
 
+.large-text-container {
+	width: clamp(10px, 100%, 960px);
+	padding-left: 12px;
+	padding-right: 12px;
+	margin-top: 40px;
+	box-sizing:border-box; /* indique au navigateur qu'il doit tenir compte des bordures */
+}
+
+#top-title h1::after {
+	width: 100%;
+}
+#top-title {
+	margin-top: 110px;
+}
+#top-title img {
+	position: absolute;
+	width: clamp( 300px, 40vw, 60px);
+	transform: translate(626px, -184px)
+}
+
+
 /* Container d'un élément complet */
 .element-container  {
-	display: inline-flex;
+	display:grid;
 	flex-direction: column;
 	align-items: center;
 	margin-top: 40px;
@@ -474,6 +500,7 @@ h3 {
 
 .element-container h2 {
 	align-self: flex-start;
+	padding-left: 12px;
 }
 
 /* Layout double colonnes */
@@ -482,24 +509,52 @@ h3 {
 	justify-content: center;
 }
 .two-columns-text-container {
-	width: clamp(10px, 100%, 360px);
+	width: 360px;/*clamp(10px, 100%, 360px);*/
 	padding-left: 12px;
 	padding-right: 12px;
 	box-sizing:border-box; /* indique au navigateur qu'il doit tenir compte des bordures */
 }
+.two-columns-container label {
+	display: inline-flex;
+}
 .two-columns-container img {
-	width:clamp(10px, 100%, 600px);
+	width:600px; /*clamp(10px, 100%, 600px)*/
 	padding-left: 12px;
 	padding-right: 12px;
 	box-sizing:border-box;
+	/* Zoom */
+	transition: transform 0.25s ease;
+  	cursor: zoom-in;
+
 }
+#zoom-check:checked ~ label img {
+	z-index: 9999;
+	transform: scale(2) translate(-25%, -25%);
+	cursor: zoom-out;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+}
+
+/* .two-columns-container label::before {
+	user-select: none;
+	z-index: 100000;
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+} */
+
 
 /* Infos */
 .info-box {
 	display: inline-flex;
+	width: 100%;
 	margin-top: 0px;
 	font-size: 18px;
-	gap: 20px;
+	justify-content: space-between;
 	/* transistion bouton afficher */
 	transition: max-height 0.5s ease, margin-top 1s ease;
 	max-height: 0px;
@@ -548,13 +603,15 @@ h3 {
 	display: none;
 }
 .expand-button {
+	width:max-content;
+	margin-left: 12px;
+	align-self: flex-start;
 	font-family: var(--text-font);
 	font-size: 16px;
 	appearance: none;
 	background-color: var(--navbar-background-color);
 	border: 1px solid rgb(69, 69, 69);
 	padding: 10px 20px 10px 20px;
-	border-radius: 99px;
 	cursor: pointer;
 	margin-top: 1rem;
 	transition: background-color var(--animation-timing);
