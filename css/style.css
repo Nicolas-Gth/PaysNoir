@@ -509,7 +509,8 @@ h3 {
 	justify-content: center;
 }
 .two-columns-text-container {
-	width: 360px;/*clamp(10px, 100%, 360px);*/
+	width: 100vw;
+	max-width: 360px;/*clamp(10px, 100%, 360px);*/
 	padding-left: 12px;
 	padding-right: 12px;
 	box-sizing:border-box; /* indique au navigateur qu'il doit tenir compte des bordures */
@@ -518,7 +519,8 @@ h3 {
 	display: inline-flex;
 }
 .two-columns-container img {
-	width:600px; /*clamp(10px, 100%, 600px)*/
+	width: 100vw;
+	max-width:600px; /*clamp(10px, 100%, 600px)*/
 	padding-left: 12px;
 	padding-right: 12px;
 	box-sizing:border-box;
@@ -976,6 +978,9 @@ footer ul li {
 	.two-columns-container {
 		flex-direction: column;
 		gap: 20px;
+	}
+	.two-columns-text-container {
+		max-width: 100vw;
 	}
 
 	.info-box {
