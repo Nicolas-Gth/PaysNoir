@@ -568,9 +568,9 @@ h3 {
 }
 
 /* translate les images */
-#image1:checked ~ .images-wrapper { transform: translateX(0px); transition: all .50s ease}
-#image2:checked ~ .images-wrapper { transform: translateX(-600px); transition: all .50s ease;}
-#image3:checked ~ .images-wrapper { transform: translateX(-1200px); transition: all .50s ease;}
+#image1:checked ~ .images-wrapper img { transform: translateX(0px); transition: all .50s ease}
+#image2:checked ~ .images-wrapper img { transform: translateX(-600px); transition: all .50s ease;}
+#image3:checked ~ .images-wrapper img { transform: translateX(-1200px); transition: all .50s ease;}
 
 .images-slider-controls label {
 	transition: opacity 0.2s ease-out;
