@@ -542,6 +542,7 @@ h3 {
 	/* width: 100vw;
 	max-width:600px; */
 	overflow: auto;
+	scrollbar-width: none;
 }
 .images-wrapper::-webkit-scrollbar {
 	display: none;
