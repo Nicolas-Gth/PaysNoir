@@ -532,11 +532,13 @@ h3 {
 	width: 100vw;
 	max-width:600px;
 	overflow: hidden;
+	position: relative;
 }
 .images-wrapper {
 	display: flex;
 	scroll-snap-type: x mandatory;
-	width: 600px;
+	width: 100vw;
+	max-width: 600px;
 	/* width: 100vw;
 	max-width:600px; */
 	overflow: auto;
@@ -557,10 +559,6 @@ h3 {
 .images-slider input[type=radio] {
 	display: none;
 }
-.images-slider-controls label {
-	cursor:pointer;
-	text-decoration: none;
-}
 .slides {
 	padding: 10px;
 	position: relative;
@@ -569,15 +567,24 @@ h3 {
 
 /* translate les images */
 #image1:checked ~ .images-wrapper img { transform: translateX(0px); transition: all .50s ease}
-#image2:checked ~ .images-wrapper img { transform: translateX(-600px); transition: all .50s ease;}
-#image3:checked ~ .images-wrapper img { transform: translateX(-1200px); transition: all .50s ease;}
+#image2:checked ~ .images-wrapper img { transform: translateX(-100%); transition: all .50s ease;}
+#image3:checked ~ .images-wrapper img { transform: translateX(-200%); transition: all .50s ease;}
+
+.images-slider-controls {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+  }
 
 .images-slider-controls label {
+	cursor:pointer;
+	text-decoration: none;
 	transition: opacity 0.2s ease-out;
 	display: none;
 	width: 50px;
 	height: 50px;
-	opacity: .6;
+	opacity: .8;
 }
 .images-slider-controls label:hover {
 	opacity: 1;
@@ -589,7 +596,7 @@ h3 {
 	user-select: none;
 	background: url(../img/arrow.png) no-repeat;
 	background-size: 50px;
-	transform: rotate(180deg) translate(20px, 210px);
+	transform: rotate(180deg) translate(20px,25px);
 	float:right;
 	display: block;
 }
@@ -599,8 +606,8 @@ h3 {
 	user-select: none;
 	background: url(../img/arrow.png) no-repeat;
 	background-size: 50px;
+	transform: translate(20px,-25px);
 	float:left;
-	transform: translate(20px, -210px);
 	display: block;
 }
 
@@ -792,10 +799,6 @@ h3 {
 .slider input[type=radio] {
 	display: none;
 }
-.slider label {
-	cursor:pointer;
-	text-decoration: none;
-}
 .slides {
 	padding: 10px;
 	position: relative;
@@ -809,6 +812,8 @@ h3 {
 #slide4:checked ~ .cards-wrapper { transform: translateX(-1080px); transition: all .50s ease;}
 
 .controls label {
+	cursor:pointer;
+	text-decoration: none;
 	transition: opacity 0.2s ease-out;
 	display: none;
 	width: 50px;
@@ -1066,14 +1071,14 @@ footer ul li {
 		align-items: center;
 	}
 
-	.two-columns-container label {
+	.two-columns-container .expand-button {
 		display: inline-flex;
 		width: 100vw;
 		max-width:700px;
 	}
-	.two-columns-container img {
+	/* .two-columns-container img {
 		max-width: 700px;
-	}
+	} */
 
 	.two-columns-container iframe {
 		width:100vw;
