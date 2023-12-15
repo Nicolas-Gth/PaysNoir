@@ -731,6 +731,11 @@ h3 {
 	flex-direction: column;
 	background: var(--navbar-background-color);
 	padding: 20px;
+	transition: transform 0.8s ease;
+}
+
+.card:hover {
+	transform:scale(104%);
 }
   
 .card-img {
@@ -754,6 +759,10 @@ h3 {
 	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 	transition: transform 0.1s ease-in;
 	user-select: none;
+}
+
+.card-category a {
+	color: black;
 }
 
 .card-category:hover {
