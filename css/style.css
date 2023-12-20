@@ -534,12 +534,12 @@ h3 {
 	position: absolute;
 	font-size: 13px;
 	font-family: var(--text-font);
-	padding-bottom: 4px;
-	padding-top: 4px;
+	padding-bottom: 6px;
+	padding-top: 6px;
 	padding-left: 16px;
 	transform: translateY(100%);
 	transition: transform 0.2s ease;
-	background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+	background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
 }
 .images-slider:hover .credit-txt{
 	transform: translateY(-100%);
@@ -736,10 +736,10 @@ h3 {
 	transition: background-color var(--animation-timing);
 }
 .expand-button::before {
-	content: "Afficher les infos ▾";
+	content: "Afficher les infos \25BE";
 }
 .expand-checkbox:checked ~ .expand-button::before {
-	content: "Cacher les infos ▴";
+	content: "Cacher les infos \25B4";
 }
 .expand-checkbox:checked ~ .info-box {
 	margin-top: 40px;
@@ -798,19 +798,11 @@ h3 {
 	height: 200px;
 	width: 300px;
 }
-.card-img-container{
-	position: relative;
-	overflow: hidden; 
-	height: 200px;
-	width: 300px;
-}
 
 .card-img-container .credit-txt {
 	text-align: left;
 	font-family: var(--text-font);
 	padding-left: 6px;
-	padding-bottom: 6px;
-	background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
 	transform: translateY(100%);
 }
 .card:hover .credit-txt{
@@ -883,10 +875,10 @@ h3 {
 }
 
 /* translate les cartes */
-#slide1:checked ~ .cards-wrapper { transform: translateX(0px); transition: all .50s ease}
-#slide2:checked ~ .cards-wrapper { transform: translateX(-360px); transition: all .50s ease;}
-#slide3:checked ~ .cards-wrapper { transform: translateX(-720px); transition: all .50s ease;}
-#slide4:checked ~ .cards-wrapper { transform: translateX(-1080px); transition: all .50s ease;}
+.slide1:checked ~ .cards-wrapper { transform: translateX(0px); transition: all .50s ease}
+.slide2:checked ~ .cards-wrapper { transform: translateX(-360px); transition: all .50s ease;}
+.slide3:checked ~ .cards-wrapper { transform: translateX(-720px); transition: all .50s ease;}
+.slide4:checked ~ .cards-wrapper { transform: translateX(-1080px); transition: all .50s ease;}
 
 .controls label {
 	cursor:pointer;
@@ -900,10 +892,10 @@ h3 {
 .controls label:hover {
 	opacity: 1;
 }
-#slide1:checked ~ .controls label:nth-child(2),
-#slide2:checked ~ .controls label:nth-child(3),
-#slide3:checked ~ .controls label:nth-child(4),
-#slide4:checked ~ .controls label:nth-child(1) {
+.slide1:checked ~ .controls label:nth-child(2),
+.slide2:checked ~ .controls label:nth-child(3),
+.slide3:checked ~ .controls label:nth-child(4),
+.slide4:checked ~ .controls label:nth-child(1) {
 	user-select: none;
 	background: url(../img/arrow.png) no-repeat;
 	background-size: 100%;
@@ -911,10 +903,10 @@ h3 {
 	float:right;
 	display: block;
 }
-#slide1:checked ~ .controls label:nth-last-child(1),
-#slide2:checked ~ .controls label:nth-last-child(4),
-#slide3:checked ~ .controls label:nth-last-child(3),
-#slide4:checked ~ .controls label:nth-last-child(2){
+.slide1:checked ~ .controls label:nth-last-child(1),
+.slide2:checked ~ .controls label:nth-last-child(4),
+.slide3:checked ~ .controls label:nth-last-child(3),
+.slide4:checked ~ .controls label:nth-last-child(2){
 	user-select: none;
 	background: url(../img/arrow.png) no-repeat;
 	background-size: 100%;
@@ -934,10 +926,10 @@ h3 {
 	background: #444;
 	margin: 0 8px;
 }
-#slide1:checked ~ .bullets label:nth-child(1),
-#slide2:checked ~ .bullets label:nth-child(2),
-#slide3:checked ~ .bullets label:nth-child(3),
-#slide4:checked ~ .bullets label:nth-child(4) {
+.slide1:checked ~ .bullets label:nth-child(1),
+.slide2:checked ~ .bullets label:nth-child(2),
+.slide3:checked ~ .bullets label:nth-child(3),
+.slide4:checked ~ .bullets label:nth-child(4) {
 	background: #ccc;
 }
 
