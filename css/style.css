@@ -54,6 +54,8 @@ a {
 	text-decoration: none;
 	list-style: none;
 	-webkit-tap-highlight-color: transparent;
+	scroll-behavior: smooth;	
+	scroll-margin-top: 100px; /* Permet d'ajouter une marge pour les href"#id" */
 }
 
 *::after,
@@ -80,7 +82,7 @@ main {
 ::selection {
 	background: rgba(255, 255, 255, 0.879);
 	color: black;
-  }
+}
 
 /* ======[Menu]====== */
 
@@ -376,7 +378,7 @@ header img {
 	100%{transform: translateX(-400vw);}
 }
 
-.slideshow-container label {
+.slideshow-container a {
 	display: flex;
 	flex-direction: column;
 	position: absolute;
@@ -400,9 +402,9 @@ header img {
 .label4 {animation: ani4 var(--slideshow-speed) infinite;}
 
 @keyframes ani1{  0%{opacity: 0;} 10%{opacity: 1;} 20%{opacity: 1;} 25%{opacity: 0;} }
-@keyframes ani2{ 25%{opacity: 0;} 35%{opacity: 1;} 45%{opacity: 1;} 50%{opacity: 0;} }
-@keyframes ani3{ 50%{opacity: 0;} 60%{opacity: 1;} 70%{opacity: 1;} 75%{opacity: 0;} }
-@keyframes ani4{ 75%{opacity: 0;} 85%{opacity: 1;} 95%{opacity: 1;}100%{opacity: 0;} }
+@keyframes ani2{ 25%{opacity: 0;} 28%{opacity: 0;} 35%{opacity: 1;} 45%{opacity: 1;} 50%{opacity: 0;} }
+@keyframes ani3{ 50%{opacity: 0;} 53%{opacity: 0;} 60%{opacity: 1;} 70%{opacity: 1;} 75%{opacity: 0;} }
+@keyframes ani4{ 75%{opacity: 0;} 78%{opacity: 0;} 85%{opacity: 1;} 95%{opacity: 1;}100%{opacity: 0;} }
 
 /* ======[Content]======= */
 /* Typographie */
@@ -526,6 +528,17 @@ h3 {
 	box-sizing:border-box;
 	scroll-snap-align: start;
 }
+
+.two-columns-container iframe {
+	height: 100%;
+	width: 100vw;
+	max-width:600px;
+	scroll-snap-align: start;
+}
+.video-container{
+	display: flex;
+}
+
 .img-container{
 	position: relative;
 }
@@ -1070,6 +1083,17 @@ footer ul li {
 		box-shadow: -10px 20px 20px rgba(0, 0, 0, 0.793);
 	}
 
+	nav ul li::after {
+		position: absolute;
+		content: "";
+		height: 1px;
+		background: rgb(27, 27, 27);
+		width: 84%;
+		left: 0%;
+		transform: translateY(14px);
+		margin-left: 8%;
+	}
+
 	nav ul a {
 		font-size: clamp(14px, 6vw, 30px);
 		display: block;
@@ -1101,8 +1125,8 @@ footer ul li {
     }
 
 	.submenu li a {
-		font-size: clamp(12px, 4.4vw, 24px);;
-		padding: 16px 0px 0px 48px;
+		font-size: clamp(12px, 4.6vw, 24px);;
+		padding: 16px 0px 0px 2em;
 	}
 }
 /* Concerne également les écrans pas tactiles*/
