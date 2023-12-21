@@ -1083,17 +1083,6 @@ footer ul li {
 		box-shadow: -10px 20px 20px rgba(0, 0, 0, 0.793);
 	}
 
-	nav ul li::after {
-		position: absolute;
-		content: "";
-		height: 1px;
-		background: rgb(27, 27, 27);
-		width: 84%;
-		left: 0%;
-		transform: translateY(14px);
-		margin-left: 8%;
-	}
-
 	nav ul a {
 		font-size: clamp(14px, 6vw, 30px);
 		display: block;
