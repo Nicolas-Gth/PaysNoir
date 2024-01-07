@@ -631,6 +631,9 @@ h3 {
 	left: 15px;
 	
 }
+.videos-slider-controls label:after{ /* Zone cliquable réduite pour accéder aux commandes du lecteur*/
+	padding: clamp(10px, 10vw, 90px) clamp(10px, 8vw, 50px);
+}
 .images-slider-controls label:hover {
 	opacity: 1;
 }
