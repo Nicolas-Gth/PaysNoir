@@ -399,12 +399,12 @@ header img {
 .label1 {animation: ani1 var(--slideshow-speed) infinite;}
 .label2 {animation: ani2 var(--slideshow-speed) infinite;}
 .label3 {animation: ani3 var(--slideshow-speed) infinite;}
-.label4 {animation: ani4 var(--slideshow-speed) infinite;}
+.label4 {animation: ani4 var(--slideshow-speed) infinite; pointer-events: none;}
 
-@keyframes ani1{  0%{opacity: 0;} 10%{opacity: 1;} 20%{opacity: 1;} 25%{opacity: 0;} }
-@keyframes ani2{ 25%{opacity: 0;} 28%{opacity: 0;} 35%{opacity: 1;} 45%{opacity: 1;} 50%{opacity: 0;} }
-@keyframes ani3{ 50%{opacity: 0;} 53%{opacity: 0;} 60%{opacity: 1;} 70%{opacity: 1;} 75%{opacity: 0;} }
-@keyframes ani4{ 75%{opacity: 0;} 78%{opacity: 0;} 85%{opacity: 1;} 95%{opacity: 1;}100%{opacity: 0;} }
+@keyframes ani1{  0%{opacity: 0;pointer-events: none;} 10%{opacity: 1;pointer-events:visible;} 20%{opacity: 1;pointer-events:visible;} 25%{opacity: 0;pointer-events: none;} }
+@keyframes ani2{ 25%{opacity: 0;pointer-events: none;} 28%{opacity: 0;pointer-events: none;} 35%{opacity: 1;pointer-events:visible;} 45%{opacity: 1;pointer-events:visible;} 50%{opacity: 0;pointer-events: none;} }
+@keyframes ani3{ 50%{opacity: 0;pointer-events: none;} 53%{opacity: 0;pointer-events: none;} 60%{opacity: 1;pointer-events:visible;} 70%{opacity: 1;pointer-events:visible;} 75%{opacity: 0;pointer-events: none;} }
+@keyframes ani4{ 75%{opacity: 0;pointer-events: none;} 78%{opacity: 0;pointer-events: none;} 85%{opacity: 1;pointer-events:visible;} 95%{opacity: 1;pointer-events:visible;}100%{opacity: 0;pointer-events: none;} }
 
 /* ========================[ Content ]========================= */
 /* Typographie */
