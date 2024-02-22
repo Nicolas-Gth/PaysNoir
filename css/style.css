@@ -397,8 +397,8 @@ header img {
 }
 
 .label1 {animation: ani1 var(--slideshow-speed) infinite;}
-.label2 {animation: ani2 var(--slideshow-speed) infinite;}
-.label3 {animation: ani3 var(--slideshow-speed) infinite;}
+.label2 {animation: ani2 var(--slideshow-speed) infinite; pointer-events: none;}
+.label3 {animation: ani3 var(--slideshow-speed) infinite; pointer-events: none;}
 .label4 {animation: ani4 var(--slideshow-speed) infinite; pointer-events: none;}
 
 @keyframes ani1{  0%{opacity: 0;pointer-events: none;} 10%{opacity: 1;pointer-events:visible;} 20%{opacity: 1;pointer-events:visible;} 25%{opacity: 0;pointer-events: none;} }
