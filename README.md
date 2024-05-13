@@ -1,4 +1,4 @@
-# [PaysNoir](https://nicolas-gth.github.io/PaysNoir/)
+# [Pays Noir](https://nicolas-gth.github.io/PaysNoir/)
 
 Ce site a été conçu pour le cours de Technologies Internet en Haute École Louvain en Hainaut option informatique de développement.
 
